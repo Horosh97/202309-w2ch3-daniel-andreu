@@ -56,3 +56,9 @@ const addSongToList = (
   year,
   success
 ) => list.push({ id, title, artist, genre, duration, year, success });
+
+const deleteSong = (title, list) =>
+  list.splice(
+    list.indexOf(list.find((deletedSong) => deletedSong.title === title)),
+    1
+  );
