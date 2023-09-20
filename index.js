@@ -68,3 +68,8 @@ const deleteSong = (title, list) =>
   );
 
 const getSong = (title, list) => list.find((song) => song.title === title);
+
+const filterSongByGenre = (genre, list) =>
+  list.filter((song) => song.genre === genre);
+
+console.log(filterSongByGenre("Metal mestizaje", songs));
