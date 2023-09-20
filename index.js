@@ -59,6 +59,12 @@ const addSongToList = (
 
 const deleteSong = (title, list) =>
   list.splice(
-    list.indexOf(list.find((deletedSong) => deletedSong.title === title)),
+    list.indexOf(
+      list.find(
+        (deletedSong) => deletedSong.title.toLowerCase() === title.toLowerCase()
+      )
+    ),
     1
   );
+
+const getSong = (title, list) => list.find((song) => song.title === title);
