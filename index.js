@@ -73,6 +73,7 @@ const filterSongByGenre = (genre, list) =>
   list.filter((song) => song.genre === genre);
 
 const filterSongBySuccess = (songs) =>
-  songs.filter((song) => song.success === true);
+  songs.filter((song) => song.success === true).length;
 
-console.log(filterSongBySuccess(songs));
+const sortSongsByYear = (songs) =>
+  songs.toSorted((songA, songB) => songA.year - songB.year);
