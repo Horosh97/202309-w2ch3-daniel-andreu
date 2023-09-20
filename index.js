@@ -45,3 +45,14 @@ const songs = [
     success: true,
   },
 ];
+
+const addSongToList = (
+  list,
+  id,
+  title,
+  artist,
+  genre,
+  duration,
+  year,
+  success
+) => list.push({ id, title, artist, genre, duration, year, success });
