@@ -60,9 +60,7 @@ const addSongToList = (
 const deleteSong = (title, list) =>
   list.splice(
     list.indexOf(
-      list.find(
-        (deletedSong) => deletedSong.title.toLowerCase() === title.toLowerCase()
-      )
+      (deletedSong) => deletedSong.title.toLowerCase() === title.toLowerCase()
     ),
     1
   );
@@ -73,7 +71,15 @@ const filterSongByGenre = (genre, list) =>
   list.filter((song) => song.genre === genre);
 
 const filterSongBySuccess = (songs) =>
-  songs.filter((song) => song.success === true).length;
+  songs.filter((song) => song.success).length;
 
 const sortSongsByYear = (songs) =>
   songs.toSorted((songA, songB) => songA.year - songB.year);
+
+const getSongsTitles = (songs) => songs.map((song) => song.title);
+
+const getAverageSeconds = (songs) =>
+  songs
+    .map((song) => song.duration)
+    .reduce((accumulator, duration) => accumulator + duration) / songs.length;
+console.log(getAverageSeconds(songs));
